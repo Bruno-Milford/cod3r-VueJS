@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<div id="app">
+    {{ nome }} {{ sobrenome }} {{ 4 * 3 }}
+</div>
+
+<script>
+    function MeuVue(params){
+        this.$el = document.querySelector(params.el)
+        this.$data = params.data
+
+        for(let atr in this.$data) {
+            Object.defineProperty(this, atr, {
+                get: () => {
+                    return this.$data[atr]
+                }, 
+                set: value => {
+                    //Aqui vc consegue intercepitar o momento antes em q vc mudou
+                    this.$data[atr] = value
+                    //Aqui vc consegue intercepitar o momento depois em q vc mudou
+                }
+            })
+        }
+
+        // interpolar
+        const regex = /\{\{([\s\w+*-/]*)\}\}/g
+        this.$el.innerHTML = this.$el.innerHTML.replace(regex, (match, $1) => {
+            const value = this[$1.trim()] // trim ele tira os espaços brancos, os espaços no meio ficam mais n na ponta
+            return value ? value : eval($1)
+        })
+    }
+
+    const vm = new MeuVue({
+        el: '#app',
+        data: {
+            nome: 'Bruno', 
+            sobrenome: 'Milford'
+        }
+    })
+
+    console.log(vm.nome);
+</script>

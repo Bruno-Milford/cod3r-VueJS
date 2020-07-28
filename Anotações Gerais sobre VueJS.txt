@@ -1,0 +1,292 @@
+el --> Controle sobre o HTML.
+
+Iniciando com VueJS ----> Interagindo com o DOM ----> Entendendo a instância do VueJS ----> Vue CLI ----> Componentes -----
+---> Formulários ----> Diretivas, Filtros e Mixins ----> Animações e Transações ----> Trabalhando com HTTP ----> Roteamento
+---> Gerenciamento de Estado ----> Deploying uma APP VueJS
+
+Implantar a sua aplicação na produção 
+
+Projeto 01 ---> Básico, Interação com template 
+Projeto 02 ---> Componentes 
+Projeto 03 ---> Animações 
+Projeto 04 ---> Rotas, Gerenciamento de Estado
+Projeto 05 ---> Projeto Final 
+
+O vueJS ele cria acessos diretos quando você trabalha dentro do template 
+
+No vueJS você não pode ter uma função e um dado com o mesmo nome 
+
+Diretiva vueJS, nada mais é do que uma propriedade personalizada que não é nativa do HTML mais o mesmo permite que você 
+adicione novas propriedades 
+
+Atraves dos modificadores de evento você consegue evitar a propagação do evento
+
+Two-Way-Binding
+
+A partir do meu input eu consigo alterar o titulo e o titulo sendo alterado gera impacto no html
+
+Usar prorpiedades computadas ja pode pegar outras propriedades e joga o resultado como se fosse uma propriedade normal
+
+propriedade watch quando você quer monitorar as mudanças de uma determinada variavel e fazer algo em 
+resposta
+
+Propriedades computadas são simcronas
+
+v-on: --> @
+v-bind --> :
+
+Usando Condicionais e Rederização de Listas
+
+v-if
+v-else 
+v-else-if
+
+Usando a tag template você consegue usar a redenrização condicional, só que o resultado final n vai haver nehuma tag dentro do html
+
+Usando um dos elementos de condição (v-if, v-else e / ou v-else-if), o elemento irá sair da pagina, o v-if vai remover o elemento
+
+v-show (Escondendo o elemento com v-show)
+
+v-for (Renderizando lista com v-for)
+
+O v-for n é colocada na tag pai mais sim na tag q irá ser repetida
+
+Iterando em Objetos com v-for
+
+Iterando em uma lista de número com v-for
+
+Projeto 01 --> O matador de Monstros (Introdução & Desafio)
+
+Para chamar uma função ou uma variavel em Vue utiliza o this
+
+Variaveis Computadas 
+
+hasResult --> Resultado de batalha retorna se o player ou o monstro tem 0% de vida
+
+Metodos 
+
+startGame --> Inicia o jogo com tanto o player quanto o monstro com 100% de vida
+
+attack --> Ataque normal e especial para o monstro ele perde vida entre 5 a 10 e ainda é atingido pelo ate especial, 
+quanto ao player como ele é um pouco mais fraco ele perde vida entre 7 a 12 so que o ataque especial não o atinge 
+
+hurt --> Machucar tanto o player quanto o monstro (leia ataque para entender melhor)
+
+healAndHurt --> O player vai ser curar entre 10 a 15 pontos de vida mas ao mesmo tempo vai ser atacado pelo monstro sofrendo dano entre 7 a 12
+
+heal --> Somente irá curar o player (leia healAndHurt para entender melhor)
+
+getRandom --> Resultado de ataque aletorio (leia attack para entender melhor)
+
+Watch 
+
+hasResult (value) --> Faz com que o jogo reinicie
+
+Instancia Vue.js
+
+Perguntas 
+
+1 - Será que eu consigo usar multiplas instancias do vue na minha aplicação ? Sim vc pode usar, mas na grande maioria dos casos isso n vai acontecer
+
+2 - Será que eu consigo a partir de um codigo JavaScript puro eu consigo acessar os dados de uma instancia do vue ? Consgue sim
+
+Ter cuidado ao fazer esse tipo de acesso, se vc modificar algumas coisas sem ser a partir do vue pode dar problema
+
+Dentro da instancia vue os dados são gerenciados
+
+Metodo get serve de proxy, ou seja, ele vai pegar um propriedade e vai retornar outra propriedade
+
+Metodo set serve para alterar o valor do dado, ou seja, ele receber o valor e vai alterar dentro de this.$data
+
+$el nada mais é do que a resolução do seletor q vc passou 
+
+o $el representa toda a estrutura html que foi definida a partir do seu template que é a versão que está sendo usada na DOM 
+
+o $data e exatamente todos os dados que vc passou na construção da sua instancia vc pode acessar diretamente vc tem todas as funcionalidades necessarias
+
+o vue e bem preciso no q de fato ele vai alterar na dom
+
+o dom virtual e a representação da sua estrutura da dom no mundo do js 
+
+quando vc monta um componente quer dizer q ele foi redenrizado, ou seja, ele foi colocado completamento da dom da sua pagina
+
+Vue.component({}) --> função para registrar um componente de forma global dentro do vue
+
+Como o VueJS atualiza o DOM 
+
+Monitoria e Atualiza (se necessário)
+
+O vueJS cria uma Virtual Dom para monitorar os dados da instancia vue 
+
+Se houver algum dado alterado na instancia vue a virtual dom atualiza na dom do navegador
+
+Ciclo da instancia VueJS
+
+metodos na instancia mas n em methods
+esses metodos so são chamados uma vez na criação da instancia
+
+beforeCreate() // Antes de criar
+created() // Criado
+
+beforeMount() // Antes de montar a dom
+mounted() // Dom montada
+
+beforeUpdate() // Antes de atualizar 
+updated() // Atualizado
+
+beforeDestroy() // Antes de destruir
+destroyed() // Destruido
+
+Vue CLI 
+
+Servidor Web para desenvolvimento
+
+VueJS executa no cliente
+
+Mas a aplicação será servida por um servidor
+--> Testar sua aplicação em um cenário mais realista
+--> Resquisições assícronas (AJAX) precisa de um servidor
+
+Fluxo de desenvolvimento
+
+{ código } --> Servidor de produção --> usuário 
+
+Vue create
+--> Usar Preset
+	--> Desenvolvimento e biuld --> Adicionar plugins vue add @vue/nome-plugin
+	--> Salvar com novo preset ? 
+--> Configuração Customizada
+	--> Adicionar Plugin
+	--> Salvar com novo preset ? 
+	--> Desenvolvimento e biuld --> Adicionar plugins vue add @vue/nome-plugin
+
+O html é sensitive ou seja n tera problema na hora de referenciar
+
+Um unico template de um componente obrigatotiamente tem que ter um unico no raiz, n pode haver varios elementos dentro do template
+
+Quando vc cria um estilo dentro do componente, além de impactar o seu componente esse estilo pode impactar toda a sua aplicação 
+
+Comunicação de componentes
+
+A comunicação entre o componente pai e o componente filho se da atraves das propriedades
+
+Comunicação entre filho e pai, o filho faz um evento que é capturado pelo pai
+
+Função Callback
+
+Comunicação entre componentes irmãos
+
+Localmente não precisa mudar pois quando muda o pai o mesmo muda os componentes filhos via props
+
+Em js um valor primitivo ele é atribuido copia e não por referencia, já um array e passado por referencia
+
+As propriedades em js são pasadas ou por valor ou por referencia
+
+Em vez de passar a informação vai props eu quero passar os dados dentro do corpo do componente
+
+Tag capaz de exibir o que está dentro do corpo do componente (slot)
+
+Tag capaz de manter o componente vivo (keep-alive)
+
+Projeto 02 - TODO
+
+this.tasks.filter(sameName) -> Filtre todas as tasks que tem o msm nome
+
+Formularios 
+
+Mexendo no componente gera impacto na vue tbm 
+
+O js cria dinamicamente os objetos
+
+Modificadores de inputs (lazy -> atualiza assim que você perde o foco do campo, number -> faz a alteração do valor de string para number, 
+trim -> faz a remoção dos espaços)
+
+o v-model faz o bind do valor e temos o evento input sendo tratado para atualizar o valor
+
+Diretivas 
+
+Cuidado: ataques de cross site scripting(XSS) que um ataque, que se vc pegar um texto malicioso que tenha codigo malicioso e interpretar esse codigo vc pode ter serios 
+problemas de segurança
+
+cross site scripting(XSS) 
+
+Cross-site scripting é um tipo de vulnerabilidade do sistema de segurança de um computador, encontrado normalmente em aplicações web que ativam ataques maliciosos ao 
+injetarem client-side script dentro das páginas web vistas por outros usuários.
+
+Malware(código malicioso)
+
+Um código malicioso, programa malicioso, software nocivo, software mal-intencionado ou software malicioso, é um programa de computador destinado a infiltrar-se em 
+um sistema de computador alheio de forma ilícita, com o intuito de causar alguns danos, alterações ou roubo de informações.
+
+Gatilhos (hooks)
+
+bind(el, binding, vnode) -> Quando a diretiva é interligada com elemento 
+inserted(el, binding, vnode) -> Elemento no nó pai
+update(el, binding, vnode, oldVnode) -> Quando o componente é atualizado (antes dos filhos)
+componentUpdated(el, binding, vnode, oldVnode) -> Quando o componente é atualizado (dps dos filhos)
+unbind(el, binding, vnode) -> Quando a diretiva é desvinculada do elemento 
+
+Registrar diretivas localmente 
+
+filtros e mixins 
+
+filtros são transformações q vc pode em cima dos valores
+mixins são formas de reeuso baseada em composição 
+
+Animações e transições
+
+CSS efeito trasition
+
+Transições com classes CSS
+
+1 - como colocar esse elemento dentro da tela
+
+v-enter
+v-enter-active
+v-enter-to
+
+2 - como tirar esse elemento da tela 
+
+v-leave
+v-leave-active
+v-leave-to
+
+css keyframes
+css timing-functions
+
+type -> quem manda no tempo de animação/transição
+
+Gatilhos JS
+
+metodos hooks (entrada)
+
+v-before-enter
+v-after-enter 
+v-enter
+v-enter-cancelled
+
+metodos hooks (saida)
+
+v-before-leave
+v-after-leave
+v-leave
+v-leave-cancelled
+
+servidor via HTTP (ajax)
+
+Axios
+
+this.$http.post() // requisição post
+this.$http() ou this.$http.get() // requisição get
+
+catch() // função usada para tratar erro
+
+vue-router controla a navegação entre multiplos componentes
+
+modos de navegação
+
+hash -> localhost:8080/#/...
+history -> localhost:8080/...
+
+
+ 

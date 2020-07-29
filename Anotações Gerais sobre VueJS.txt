@@ -288,5 +288,16 @@ modos de navegação
 hash -> localhost:8080/#/...
 history -> localhost:8080/...
 
+Eu n só consigo navegar em um router view como eu consigo navegar por multiplos routers views
 
+redirect -> redireciona para a url desejada
+
+hash (representa o id) (objetivo real) -> navegar para pontos especificos da pagina
+
+intercepitar a entrada e saida da rota
+
+carregamento tardio 
+beforeEach()
+beforeEnter()
+beforeRouteEnter()
  

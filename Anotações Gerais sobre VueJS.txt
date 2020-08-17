@@ -296,7 +296,9 @@ hash (representa o id) (objetivo real) -> navegar para pontos especificos da pag
 
 intercepitar a entrada e saida da rota
 
-carregamento tardio 
+carregando rotas tardiamente
+
+import dinamico
 beforeEach()
 beforeEnter()
 beforeRouteEnter()

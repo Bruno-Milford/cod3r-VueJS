@@ -303,3 +303,8 @@ beforeEach()
 beforeEnter()
 beforeRouteEnter()
  
+VueX
+
+state: {} -> é o estado aonde vc vai poder compartilhar informações
+
+conceito getter -> nd mais é do q uma função e a mesma vai ler uma informação e retorna essa informação 

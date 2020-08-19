@@ -1,2 +1,2 @@
 # cod3r-VueJS
-Curso de VueJS
+Curso de **VueJS**

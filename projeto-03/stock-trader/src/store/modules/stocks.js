@@ -1,4 +1,4 @@
-import stocks from '../../data/stocks'
+import stocks from '@/data/stocks'
 
 export default {
     state: {
@@ -9,8 +9,8 @@ export default {
             state.stocks = stocks
         },
         randomizeStocks(state) {
-            state.stocks.forEach(stock => { 
-                stock.price = Math.round(stock.price * (1 + Math.random() - 0.45))
+            state.stocks.forEach(stock => {
+                stock.price = Math.round(stock.price * (1 + Math.random() - 0.42))
             })
         }
     },
